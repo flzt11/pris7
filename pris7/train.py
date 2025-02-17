@@ -13,7 +13,7 @@ def train_mnist():
     parent_dir = os.path.dirname(current_dir)
     train_data_dir = os.path.join(parent_dir, 'data')
     model_save_path = os.path.join(parent_dir, 'cnn_model.pth')
-    
+
     # 超参数
     EPOCH = 1
     BATCH_SIZE = 50
