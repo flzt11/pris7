@@ -3,10 +3,14 @@ import torchvision
 import numpy as np
 import cv2
 from pris7.model import CNN
+import os
 
 def test_mnist():
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    parent_dir = os.path.dirname(current_dir)
+    test_data_dir = os.path.join(parent_dir, 'pris7', 'data')
     test_data = torchvision.datasets.MNIST(
-        root='./pris7/data/',
+        root=test_data_dir,
         train=False  # 表明是测试集111
     )
 
@@ -17,7 +21,16 @@ def test_mnist():
 
     # 加载训练好的模型
     cnn = CNN()
-    cnn.load_state_dict(torch.load('./pris7/cnn_model.pth'))
+
+    # 获取当前文件的目录
+
+
+    # 构造相对路径
+    model_path = os.path.join(parent_dir, 'pris7', 'cnn_model.pth')
+
+    # 加载模型
+    cnn.load_state_dict(torch.load(model_path))
+
     cnn.eval()
 
     inputs = test_x[:32]  # 测试32个数据
