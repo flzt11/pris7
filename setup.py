@@ -7,8 +7,8 @@ setup(
     # long_description=open('README.md').read(),  # 可选，如果有 README 文件
     long_description_content_type='text/markdown',  # 如果使用 Markdown 格式
     author='Zhang Kailong',
-    # author_email='your_email@example.com',
-    # url='https://github.com/flzt11/pris7_MNIST',  # 如果有 GitHub 仓库链接
+    author_email='zhangkailong@bupt.edu.cn',
+    url='https://github.com/flzt11/pris7.git',  # 如果有 GitHub 仓库链接
     packages=find_packages(),  # 自动发现所有包
     install_requires=[
         'torch==1.13.1+cu117',
