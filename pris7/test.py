@@ -13,11 +13,7 @@ def test_mnist():
     print(test_data_dir)
 
     test_data = torchvision.datasets.MNIST(
-<<<<<<< HEAD
-        root=test_data_dir,
-=======
         root='./pris/data/',
->>>>>>> parent of d245b4c (3)
         train=False  # 表明是测试集111
     )
 
@@ -28,20 +24,10 @@ def test_mnist():
 
     # 加载训练好的模型
     cnn = CNN()
-<<<<<<< HEAD
 
     # 获取当前文件的目录
 
-
-    # 构造相对路径
-    model_path = os.path.join(parent_dir, 'cnn_model.pth')
-
-    # 加载模型
-    cnn.load_state_dict(torch.load(model_path))
-
-=======
     cnn.load_state_dict(torch.load('./pris/cnn_model.pth'))
->>>>>>> parent of d245b4c (3)
     cnn.eval()
 
     inputs = test_x[:32]  # 测试32个数据
