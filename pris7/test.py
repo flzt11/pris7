@@ -8,7 +8,7 @@ import os
 def test_mnist():
     current_dir = os.path.dirname(os.path.realpath(__file__))
     parent_dir = os.path.dirname(current_dir)
-    test_data_dir = os.path.join(parent_dir, 'pris7', 'data')
+    test_data_dir = os.path.join(parent_dir, 'data')
     test_data = torchvision.datasets.MNIST(
         root=test_data_dir,
         train=False  # 表明是测试集111
@@ -26,7 +26,7 @@ def test_mnist():
 
 
     # 构造相对路径
-    model_path = os.path.join(parent_dir, 'pris7', 'cnn_model.pth')
+    model_path = os.path.join(parent_dir, 'cnn_model.pth')
 
     # 加载模型
     cnn.load_state_dict(torch.load(model_path))
