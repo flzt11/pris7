@@ -1,7 +1,7 @@
 # pris7
  AI课程任务7-基于Mnist的手写数字识别
 
-使用说明
+###使用说明###
 conda create -n pris7 python=3.7
 conda activate pris7
 git clone https://github.com/flzt11/pris7.git
