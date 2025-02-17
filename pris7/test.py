@@ -6,8 +6,8 @@ from pris7.model import CNN
 
 def test_mnist():
     test_data = torchvision.datasets.MNIST(
-        root='./data/',
-        train=False  # 表明是测试集
+        root='./pris/data/',
+        train=False  # 表明是测试集111
     )
 
     test_x = torch.unsqueeze(test_data.train_data, dim=1).type(torch.FloatTensor)[:2000] / 255
@@ -17,7 +17,7 @@ def test_mnist():
 
     # 加载训练好的模型
     cnn = CNN()
-    cnn.load_state_dict(torch.load('cnn_model.pth'))
+    cnn.load_state_dict(torch.load('./pris/cnn_model.pth'))
     cnn.eval()
 
     inputs = test_x[:32]  # 测试32个数据

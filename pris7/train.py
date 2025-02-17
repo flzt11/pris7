@@ -16,13 +16,13 @@ def train_mnist():
 
     # 下载mnist手写数据集
     train_data = torchvision.datasets.MNIST(
-        root='./data/',
+        root='./pris/data/',
         train=True,
         transform=torchvision.transforms.ToTensor(),
         download=DOWNLOAD_MNIST,
     )
 
-    test_data = torchvision.datasets.MNIST(root='./data/', train=False)
+    test_data = torchvision.datasets.MNIST(root='./pris/data/', train=False)
 
     train_loader = Data.DataLoader(
         dataset=train_data,
@@ -45,4 +45,4 @@ def train_mnist():
             if step % 50 == 0:
                 print(f'Epoch: {epoch}, Loss: {loss.item()}')
 
-    torch.save(cnn.state_dict(), 'cnn_model.pth')
+    torch.save(cnn.state_dict(), './pris/cnn_model.pth')
