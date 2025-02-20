@@ -17,7 +17,7 @@ def train_mnist():
 
     # 下载mnist手写数据集
     train_data = torchvision.datasets.MNIST(
-        root='./pris/data/',
+        root='./pris7/data/',
         train=True,
         transform=torchvision.transforms.ToTensor(),
         download=DOWNLOAD_MNIST,
@@ -44,4 +44,4 @@ def train_mnist():
             if step % 50 == 0:
                 print(f'Epoch: {epoch}, Loss: {loss.item()}')
 
-    torch.save(cnn.state_dict(), './pris/cnn_model.pth')
+    torch.save(cnn.state_dict(), './pris7/cnn_model.pth')

@@ -9,11 +9,6 @@ def train_mnist():
 
     torch.manual_seed(1)
 
-    current_dir = os.path.dirname(os.path.realpath(__file__))
-    parent_dir = os.path.dirname(current_dir)
-    train_data_dir = os.path.join(parent_dir, 'data')
-    model_save_path = os.path.join(parent_dir, 'cnn_model.pth')
-
     # 超参数
     EPOCH = 1
     BATCH_SIZE = 50
@@ -22,7 +17,7 @@ def train_mnist():
 
     # 下载mnist手写数据集
     train_data = torchvision.datasets.MNIST(
-        root=train_data_dir,
+        root='./pris7/data/',
         train=True,
         transform=torchvision.transforms.ToTensor(),
         download=DOWNLOAD_MNIST,
@@ -49,4 +44,4 @@ def train_mnist():
             if step % 50 == 0:
                 print(f'Epoch: {epoch}, Loss: {loss.item()}')
 
-    torch.save(cnn.state_dict(), model_save_path)
+    torch.save(cnn.state_dict(), './pris7/cnn_model.pth')
